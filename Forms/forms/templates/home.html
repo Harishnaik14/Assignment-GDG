@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Centre</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      scroll-behavior: smooth;
+      background-color: #f8f9fa;
+    }
+    header {
+      text-align: center;
+      padding: 30px 0;
+      background-color: #0078d7;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .form-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 20px 0;
+      gap: 10px;
+    }
+    .form-buttons .btn {
+      flex: 0 0 auto;
+    }
+    section {
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+    }
+  </style>
+</head>
+<body>{% csrf_token %}
+
+<!-- Header -->
+<header>Form Centre</header>
+
+<!-- Form Buttons in One Line -->
+<div class="form-buttons">
+  <a href="#application" class="btn btn-primary">Application</a>
+  <a href="#order" class="btn btn-secondary">Order Tracking</a>
+  <a href="#service" class="btn btn-success">Service Order</a>
+  <a href="#course" class="btn btn-warning">Course Evaluation</a>
+  <a href="#scholarship" class="btn btn-info">Scholarship</a>
+  <a href="#feedback" class="btn btn-dark">Student Feedback</a>
+  <a href="#workshop" class="btn btn-danger">Workshop</a>
+  <a href="#email" class="btn btn-outline-primary">Email Sign-Up</a>
+</div>
+
+<div class="container">
+
+  <!-- Application Form -->
+  <section id="application">
+    <h2 class="text-primary">Application Form</h2>
+    <form class="mt-3">
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Address</label>
+        <textarea class="form-control" rows="2" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Position Applied For</label>
+        <select class="form-select" required>
+          <option selected>Select Position</option>
+          <option>Software Developer</option>
+          <option>Graphic Designer</option>
+          <option>Marketing Executive</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Resume / Additional Info</label>
+        <textarea class="form-control" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Submit Application</button>
+    </form>
+  </section>
+
+  <!-- Order Tracking Form -->
+  <section id="order">
+    <h2 class="text-primary">Order Delivery & Tracking</h2>
+    <form class="mt-3">
+      <div class="mb-3">
+        <label class="form-label">Order ID</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Customer Name</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Delivery Address</label>
+        <textarea class="form-control" rows="2"></textarea>
+      </div>
+      <button type="submit" class="btn btn-secondary w-100">Track Order</button>
+    </form>
+  </section>
+
+  <!-- Service Order Form -->
+  <section id="service">
+    <h2 class="text-primary">Service Order Form</h2>
+    <form class="mt-3">
+      <div class="mb-3">
+        <label class="form-label">Service Type</label>
+        <select class="form-select">
+          <option>Internet</option>
+          <option>Cleaning</option>
+          <option>Maintenance</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Preferred Date</label>
+        <input type="date" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Additional Details</label>
+        <textarea class="form-control" rows="2"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Order Service</button>
+    </form>
+  </section>
+
+  <!-- Course Evaluation Form -->
+  <section id="course">
+    <h2 class="text-primary">Course Evaluation</h2>
+    <form class="mt-3">
+      <div class="mb-3">
+        <label class="form-label">Course Name</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Instructor Name</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Rating</label>
+        <select class="form-select">
+          <option>Excellent</option>
+          <option>Good</option>
+          <option>Average</option>
+          <option>Poor</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Comments</label>
+        <textarea class="form-control" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-warning w-100">Submit Evaluation</button>
+    </form>
+  </section>
+
+  <!-- Scholarship Form -->
+  <section id="scholarship">
+    <h2 class="text-primary">Scholarship Application</h2>
+    <form class="mt-3">
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Program of Study</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Why do you deserve this scholarship?</label>
+        <textarea class="form-control" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-info w-100">Apply</button>
+    </form>
+  </section>
+
+  <!-- Student Feedback Form -->
+  <section id="feedback">
+    <h2 class="text-primary">Student Feedback</h2>
+    <form class="mt-3">
+      <div class="mb-3">
+        <label class="form-label">Student Name</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Course / Subject</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Feedback</label>
+        <textarea class="form-control" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark w-100">Submit Feedback</button>
+    </form>
+  </section>
+
+  <!-- Workshop Registration Form -->
+  <section id="workshop">
+    <h2 class="text-primary">Workshop Registration</h2>
+    <form class="mt-3">
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Workshop Topic</label>
+        <select class="form-select">
+          <option>Web Development</option>
+          <option>Data Science</option>
+          <option>Graphic Design</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Experience / Notes</label>
+        <textarea class="form-control" rows="2"></textarea>
+      </div>
+      <button type="submit" class="btn btn-danger w-100">Register</button>
+    </form>
+  </section>
+
+  <!-- Email Sign-Up Form -->
+  <section id="email">
+    <h2 class="text-primary">Email Sign-Up</h2>
+    <form class="mt-3">
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&]).{8,}" title="Include letter, number, and symbol" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-outline-primary w-100">Sign Up</button>
+    </form>
+  </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
